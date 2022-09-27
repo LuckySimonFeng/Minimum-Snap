@@ -1,0 +1,21 @@
+ifndef define 的作用，保障C++不会重复引用头文件 标志性使用#开头  https://blog.csdn.net/qq_21989927/article/details/108619694
+
+
+ROS结构：一般build和devel都是自动生成的  https://zhuanlan.zhihu.com/p/139405796
+
+build:编译空间。 存放CMake和catkin的缓存信息、配置信息和其他中间文件。
+
+devel:开发空间。 存放编译后生成的目标文件，包括头文件、动态&静态链接库、可执行文件等。
+
+SRC:源文件空间。 下面放置多个package,每一个package叫一个功能包，是catkin编译的基本单元。
+
+    一个 package 下必须包含 CMakeLists.txt 和 package.xml 两个文件。package.xml 文件定义了功能包的属性信息，包括包名，版本号，作者，编译依赖和运行依赖等。
+
+    include文件夹下都是.h头文件  src下面都是.cpp文件  launch文件夹放.launch文件，用于统一启动
+
+source devel/setup.bash ：devel文件夹中存在几个setup.*sh形式的环境变量设置脚本。使用source命令运行这些脚本文件，则工作空间的环境变量设置可以生效（如可以找到该工作空间内的项目）。
+在终端中使用source命令设置的环境变量只能在当前终端中生效
+
+
+
+
